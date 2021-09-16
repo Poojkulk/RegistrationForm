@@ -24,3 +24,7 @@ jobs:
         cache: maven
     - name: Build with Maven
       run: mvn -B package --file pom.xml
+    - name: deploy tomcat
+      run: curl -v -u admin:admin -T  /home/runner/work/RegistrationForm/RegistrationForm/target/junit-0.0.1-SNAPSHOT.jar 'http://ec2-34-212-139-113.us-west-2.compute.amazonaws.com:8080/manager/text/deploy?path=/JUnit Hello Worl'
+
+  
